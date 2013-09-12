@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="OrderService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:18461/DynamiteStoreOrderService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:18461/DynamiteStoreOrderService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:18461/DynamiteStoreOrderService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DynamiteStore.DomainModel" />
+      <xsd:import schemaLocation="http://localhost:18461/DynamiteStoreOrderService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DynamiteStore.DBObjectState" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOrder_GetOrderByKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByKey" />
+  </wsdl:message>
+  <wsdl:message name="IOrder_GetOrderByKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrder_GetOrderDetailsByKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderDetailsByKey" />
+  </wsdl:message>
+  <wsdl:message name="IOrder_GetOrderDetailsByKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderDetailsByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrder_AddUpdateOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUpdateOrders" />
+  </wsdl:message>
+  <wsdl:message name="IOrder_AddUpdateOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUpdateOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrder_DeleteOrderByKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderByKey" />
+  </wsdl:message>
+  <wsdl:message name="IOrder_DeleteOrderByKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderByKeyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IOrder">
+    <wsdl:operation name="GetOrderByKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrder/GetOrderByKey" message="tns:IOrder_GetOrderByKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrder/GetOrderByKeyResponse" message="tns:IOrder_GetOrderByKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetailsByKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrder/GetOrderDetailsByKey" message="tns:IOrder_GetOrderDetailsByKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrder/GetOrderDetailsByKeyResponse" message="tns:IOrder_GetOrderDetailsByKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdateOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrder/AddUpdateOrders" message="tns:IOrder_AddUpdateOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrder/AddUpdateOrdersResponse" message="tns:IOrder_AddUpdateOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderByKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrder/DeleteOrderByKey" message="tns:IOrder_DeleteOrderByKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrder/DeleteOrderByKeyResponse" message="tns:IOrder_DeleteOrderByKey_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IOrder" type="tns:IOrder">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetOrderByKey">
+      <soap:operation soapAction="http://tempuri.org/IOrder/GetOrderByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetailsByKey">
+      <soap:operation soapAction="http://tempuri.org/IOrder/GetOrderDetailsByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdateOrders">
+      <soap:operation soapAction="http://tempuri.org/IOrder/AddUpdateOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderByKey">
+      <soap:operation soapAction="http://tempuri.org/IOrder/DeleteOrderByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderService">
+    <wsdl:port name="BasicHttpBinding_IOrder" binding="tns:BasicHttpBinding_IOrder">
+      <soap:address location="http://localhost:18461/DynamiteStoreOrderService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

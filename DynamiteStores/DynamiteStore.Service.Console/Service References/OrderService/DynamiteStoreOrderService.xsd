@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DynamiteStore.DomainModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DynamiteStore.DomainModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18461/DynamiteStoreOrderService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DynamiteStore.DBObjectState" />
+  <xs:complexType name="Order">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="DueDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LineItems" nillable="true" type="tns:ArrayOfLineItem" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OnlineOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderId" type="xs:int" />
+      <xs:element minOccurs="0" name="Payments" nillable="true" type="tns:ArrayOfPayment" />
+      <xs:element minOccurs="0" name="PromotionId" type="xs:int" />
+      <xs:element minOccurs="0" name="PurchaseOrderNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SalesOrderNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DynamiteStore.DBObjectState" minOccurs="0" name="State" type="q1:State" />
+      <xs:element minOccurs="0" name="SubTotal" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Order" nillable="true" type="tns:Order" />
+  <xs:complexType name="ArrayOfLineItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LineItem" nillable="true" type="tns:LineItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLineItem" nillable="true" type="tns:ArrayOfLineItem" />
+  <xs:complexType name="LineItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LineItemId" type="xs:int" />
+      <xs:element minOccurs="0" name="LineTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OrderId" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderQty" type="xs:int" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="ShipmentId" nillable="true" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DynamiteStore.DBObjectState" minOccurs="0" name="State" type="q2:State" />
+      <xs:element minOccurs="0" name="UnitPrice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UnitPriceDiscount" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LineItem" nillable="true" type="tns:LineItem" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="tns:Category" />
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="Color" type="tns:ProductColor" />
+      <xs:element minOccurs="0" name="DiscontinuedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LineItems" nillable="true" type="tns:ArrayOfLineItem" />
+      <xs:element minOccurs="0" name="ListPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Photo" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SellEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SellStartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ShippingWeight" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StandardCost" type="xs:decimal" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DynamiteStore.DBObjectState" minOccurs="0" name="State" type="q3:State" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="Category">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProduct" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DynamiteStore.DBObjectState" minOccurs="0" name="State" type="q4:State" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Category" nillable="true" type="tns:Category" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:simpleType name="ProductColor">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="White" />
+      <xs:enumeration value="Black" />
+      <xs:enumeration value="Blue" />
+      <xs:enumeration value="Red" />
+      <xs:enumeration value="Green" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProductColor" nillable="true" type="tns:ProductColor" />
+  <xs:complexType name="ArrayOfPayment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Payment" nillable="true" type="tns:Payment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPayment" nillable="true" type="tns:ArrayOfPayment" />
+  <xs:complexType name="Payment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
+      <xs:element minOccurs="0" name="OrderId" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentId" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DynamiteStore.DBObjectState" minOccurs="0" name="State" type="q5:State" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Payment" nillable="true" type="tns:Payment" />
+</xs:schema>

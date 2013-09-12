@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18461/DynamiteStoreOrderService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DynamiteStore.DomainModel" />
+  <xs:element name="GetOrderByKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderByKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DynamiteStore.DomainModel" minOccurs="0" name="GetOrderByKeyResult" nillable="true" type="q1:Order" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderDetailsByKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderDetailsByKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DynamiteStore.DomainModel" minOccurs="0" name="GetOrderDetailsByKeyResult" nillable="true" type="q2:Order" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUpdateOrders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DynamiteStore.DomainModel" minOccurs="0" name="order" nillable="true" type="q3:Order" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUpdateOrdersResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteOrderByKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteOrderByKeyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

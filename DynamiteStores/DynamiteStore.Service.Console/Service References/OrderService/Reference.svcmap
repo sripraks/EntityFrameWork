@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="672df052-6a5e-4dc2-870f-5a73514f3814" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:18461/DynamiteStoreOrderService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DynamiteStoreOrderService.disco" MetadataType="Disco" ID="3367ed03-078e-4f55-8899-76d513273685" SourceId="1" SourceUrl="http://localhost:18461/DynamiteStoreOrderService.svc?disco" />
+    <MetadataFile FileName="DynamiteStoreOrderService.xsd" MetadataType="Schema" ID="0f4fa2e9-7e12-498a-8dd3-4782383f80cb" SourceId="1" SourceUrl="http://localhost:18461/DynamiteStoreOrderService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DynamiteStoreOrderService1.xsd" MetadataType="Schema" ID="bfde2207-082f-4b33-8f89-9c866afd5733" SourceId="1" SourceUrl="http://localhost:18461/DynamiteStoreOrderService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DynamiteStoreOrderService2.xsd" MetadataType="Schema" ID="0c892ad6-461a-4e8a-b4dc-8eac85a3279d" SourceId="1" SourceUrl="http://localhost:18461/DynamiteStoreOrderService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DynamiteStoreOrderService3.xsd" MetadataType="Schema" ID="dfa2948e-f660-4ebf-aa00-c68c17d9145c" SourceId="1" SourceUrl="http://localhost:18461/DynamiteStoreOrderService.svc?xsd=xsd1" />
+    <MetadataFile FileName="OrderService.wsdl" MetadataType="Wsdl" ID="c96d3494-0b97-49a5-9bd6-18ee07652a3c" SourceId="1" SourceUrl="http://localhost:18461/DynamiteStoreOrderService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

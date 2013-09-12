@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C02D1933-6035-4478-84B7-66C8DDFBB816}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DynamiteStore.Service.Console</RootNamespace>
+    <AssemblyName>DynamiteStore.Service.Console</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\CustomerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OrderService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DynamiteDBObjectState\DynamiteStore.DBObjectState.csproj">
+      <Project>{8DF399A0-96F2-42AA-9360-E1F017F9BA9E}</Project>
+      <Name>DynamiteStore.DBObjectState</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamiteDomainModel\DynamiteStore.DomainModel.csproj">
+      <Project>{08B18B78-BFD0-4D2F-8F56-0E956E6B6447}</Project>
+      <Name>DynamiteStore.DomainModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\DynamiteStore.DomainModel.Customer.datasource" />
+    <None Include="Properties\DataSources\DynamiteStore.DomainModel.Order.datasource" />
+    <None Include="Service References\CustomerService\CustomerService.wsdl" />
+    <None Include="Service References\CustomerService\DynamiteStoreCustomerService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CustomerService\DynamiteStoreCustomerService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CustomerService\DynamiteStoreCustomerService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CustomerService\DynamiteStoreCustomerService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderService\DynamiteStoreOrderService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderService\DynamiteStoreOrderService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderService\DynamiteStoreOrderService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderService\DynamiteStoreOrderService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderService\OrderService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CustomerService\" />
+    <WCFMetadataStorage Include="Service References\OrderService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CustomerService\DynamiteStoreCustomerService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CustomerService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CustomerService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CustomerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrderService\DynamiteStoreOrderService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrderService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrderService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrderService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A064F41-2671-45DC-B480-69477DBF8322}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DynamiteStore.Data.Repository</RootNamespace>
+    <AssemblyName>DynamiteStore.Data.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomerRepository.cs" />
+    <Compile Include="OrderRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DynamiteDBObjectState\DynamiteStore.DBObjectState.csproj">
+      <Project>{8DF399A0-96F2-42AA-9360-E1F017F9BA9E}</Project>
+      <Name>DynamiteStore.DBObjectState</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamiteDomainModel\DynamiteStore.DomainModel.csproj">
+      <Project>{08B18B78-BFD0-4D2F-8F56-0E956E6B6447}</Project>
+      <Name>DynamiteStore.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamiteStore.Data.Context\DynamiteStore.Data.Context.csproj">
+      <Project>{9030CEC1-770B-43A5-8A3C-7E8FFDAE5526}</Project>
+      <Name>DynamiteStore.Data.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamiteStore.Data.UnitOfWork\DynamiteStore.Data.UnitOfWork.csproj">
+      <Project>{071EEAE0-9ED1-4145-9230-3F1C78B59929}</Project>
+      <Name>DynamiteStore.Data.UnitOfWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamiteStore.Data\DynamiteStore.Data.csproj">
+      <Project>{3836DBA0-EF21-4668-A523-89BB5DD3E1A8}</Project>
+      <Name>DynamiteStore.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
